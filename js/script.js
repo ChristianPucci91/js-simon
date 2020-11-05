@@ -35,7 +35,21 @@ numeriGenerati = (generaNumeri(1,100)); // richiamo la funzione generaNumeri
 console.log("I numeri che devi ricordare sono: ",numeriGenerati);
 alert("I Numeri che devi ricordare sono: " + numeriGenerati) // creo alert con i numeri generati dalla funzione
 // -------------------------------------------------------------------------------------------
+// creo un countdown visibile all'utente prima di iniziare la partita
 
+var counter = 30;
+setInterval(function () {
+ if (counter > 0) {
+   id = document.getElementById("counter");
+   id.innerHTML = "inizierai a giocare fra " + counter;
+   counter--;
+  }
+  else {
+   id.innerHTML = "Inizia!";
+  }
+},1000);
+
+// -------------------------------------------------------------------------------------------
 // creo funzione setTimeout che si attiverà 30 secondi dopo che l'utente avrà dato l'ok a l'alert dei numeriGenerati
 // questa funzione servirà per far inserire i numeri all'utente e pusharli dentro a 2 array.
 setTimeout(function () {
@@ -94,7 +108,7 @@ setTimeout(function () {
    numeriCpu.className = "blue";
   }
 
-},30000) // fine funzione setTimeout imposrato a 30 secondi
+},32000) // fine funzione setTimeout impostato a 32 secondi per dare il tempo al countdown di fare le operazioni
 
 // -------------------------------------------------------------------------------------------
 
@@ -112,6 +126,6 @@ function generaNumeri(min,max) {
     } // fine ciclo while
     numeriGenerati.push(numeriGeneratiElemento);
   } // fine ciclo for
-  
+
   return numeriGenerati;
 } // fine funzione
