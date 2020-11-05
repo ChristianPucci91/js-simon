@@ -18,30 +18,41 @@ console.log("i numeri generati sono:", numeriGenerati);
 var punteggio = 0;
 
 var partita = setTimeout(function () {
+
    var arrayUtente = [];
+   var numeriIndovinati = [];
    for (var i = 0; i < 5; i++) {
      var numeroInserito = [i];
 
      numeroInserito = parseInt(prompt("inserisci numero"));
 
-     while ((arrayUtente.includes(numeroInserito)) || (isNaN(numeroInserito))) {
-       numeroInserito = parseInt(prompt("inserisci numero"));
+     while ((arrayUtente.includes(numeroInserito)) || (isNaN(numeroInserito)) || (numeroInserito > 100) || (numeroInserito < 1) ) {
+       numeroInserito = parseInt(prompt("Per favore, inserisci un numero secondo le regole!"));
      }
      arrayUtente.push(numeroInserito);
      console.log("array utente",arrayUtente);
      if (numeriGenerati.includes(numeroInserito)) {
        punteggio++;
+       numeriIndovinati.push(numeroInserito);
      }
      console.log("il tuo punteggio è",punteggio);
    }
 
+   // STEP 3 una volta inseriti il programma dovrà stabilire quanti numeri inseriti dall'utente sono uguali all'array dei numeri casuali
+   // e dichiarare il punteggio. se punteggio == a 5 l'utente avrà vinto altrimenti punteggio sarà uguale ai numeri indovinati
 
-})
+   // STEP 4 OUTPUT il programma stamperà il punteggio e quali numeri sono stati azzeccati
 
-// STEP 3 una volta inseriti il programma dovrà stabilire quanti numeri inseriti dall'utente sono uguali all'array dei numeri casuali
-// e dichiarare il punteggio. se punteggio == a 5 l'utente avrà vinto altrimenti punteggio sarà uguale ai numeri indovinati
+   if (punteggio < 5) {
+     console.log("Hai perso!" + "il tuo punteggio è: ",punteggio);
+     console.log("i numeri che hai indovinato sono: ",numeriIndovinati);
+   }else {
+     console.log("Hai vinto!!" + "il tuo punteggio è:",punteggio);
+     console.log("I numeri che hai indovinato sono: ", arrayUtente);
+   }
 
-// STEP 4 OUTPUT il programma stamperà il punteggio e quali numeri sono stati azzeccati
+
+},1000)
 
 
 // FUNZIONI
