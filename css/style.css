@@ -1,1 +1,46 @@
+/* regole generali */
 
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  margin:auto;
+  min-height: 100vh;
+   background-image: linear-gradient(#438be6, #ffefed, #ffffff);
+  text-align: center;
+}
+
+.regole {
+  text-align:left;
+  padding-top:20px;
+  width: 40%;
+  margin:auto;
+}
+
+.regole * {
+  line-height: 30px;
+}
+
+/* regole di output */
+
+.output {
+  min-height: 20vh;
+  padding-top: 30vh;
+  text-align: center;
+}
+
+.green {
+  color:green;
+}
+
+.red {
+  color:red;
+}
+
+.blue {
+  color:blue;
+}

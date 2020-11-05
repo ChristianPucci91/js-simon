@@ -6,12 +6,38 @@
 
     <meta charset="utf-8">
     <title>js-Simon by christian Pucci</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
   </head>
 
   <body>
 
-    <h1 id="stampa"></h1>
+    <div class="container"><!-- container -->
+
+      <h1>Regole del gioco:</h1>
+
+      <div class="regole"> <!-- faccio visualizzare le regole del gioco prima di giocare -->
+
+        <h3>Il computer stamperà dei numeri casuali da 1 a 100,
+        Dovrai scegliere tu la difficoltà, ovvero quanti numeri dovrai ricordare.<br>
+        Una volta cliccato su ok, inizierai a giocare dopo 30 secondi, e dovrai
+        inserire i numeri a seconda della difficoltà scelta.
+        Se indovinerai tutti i numeri avrai vinto la partita.</h3>
+
+        <div class="output"> <!-- faccio visualizzare all'utente l'esito della partita -->
+
+         <h3 id ="rangetext"></h3>
+         <h3 id ="numeri_inseriti"></h3>
+         <h3 id="punteggio"></h3>
+         <h3 id="numeri_indovinati"></h3>
+         <h3 id="numeri_cpu"></h3>
+
+        </div>
+
+      </div>
+
+    </div>
 
     <script type="text/javascript" src="js/script.js">
     </script>
